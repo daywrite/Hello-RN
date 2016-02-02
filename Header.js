@@ -1,8 +1,3 @@
-ï»¿/**
- * Created by Administrator on 2016/2/2.
- */
-'use strict'
-
 import React, {
     Component,
     Image,
@@ -21,7 +16,7 @@ export default class Header extends Component {
                     <Image source={require('./images/header/icon_search.png')} style={styles.searchIcon}/>
                     <TextInput
                         keyboardType='web-search'
-                        placeholder='æœç´¢äº¬ä¸œå•†å“/åº—é“º'
+                        placeholder='Search/Find'
                         style={styles.inputText}/>
                     <Image source={require('./images/header/icon_voice.png')} style={styles.voiceIcon}/>
                 </View>
@@ -33,24 +28,24 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',   // æ°´å¹³æ’å¸ƒ
+        flexDirection: 'row',   // Ë®Æ½ÅÅ²¼
         paddingLeft: 10,
         paddingRight: 10,
-        paddingTop: Platform.OS === 'ios' ? 20 : 0,  // å¤„ç†iOSçŠ¶æ€æ 
-        height: Platform.OS === 'ios' ? 68 : 48,   // å¤„ç†iOSçŠ¶æ€æ 
+        paddingTop: Platform.OS === 'ios' ? 20 : 0,  // ´¦ÀíiOS×´Ì¬À¸
+        height: Platform.OS === 'ios' ? 68 : 48,   // ´¦ÀíiOS×´Ì¬À¸
         backgroundColor: '#d74047',
-        alignItems: 'center'  // ä½¿å…ƒç´ å‚ç›´å±…ä¸­æ’å¸ƒ, å½“flexDirectionä¸ºcolumnæ—¶, ä¸ºæ°´å¹³å±…ä¸­
+        alignItems: 'center'  // Ê¹ÔªËØ´¹Ö±¾ÓÖĞÅÅ²¼, µ±flexDirectionÎªcolumnÊ±, ÎªË®Æ½¾ÓÖĞ
     },
     logo: {
         height: 24,
         width: 64,
-        resizeMode: 'stretch'  // è®¾ç½®æ‹‰ä¼¸æ¨¡å¼
+        resizeMode: 'stretch'  // ÉèÖÃÀ­ÉìÄ£Ê½
     },
     searchBox: {
         height: 30,
         flexDirection: 'row',
-        flex: 1,  // ç±»ä¼¼äºandroidä¸­çš„layout_weight,è®¾ç½®ä¸º1å³è‡ªåŠ¨æ‹‰ä¼¸å¡«å……
-        borderRadius: 5,  // è®¾ç½®åœ†è§’è¾¹
+        flex: 1,  // ÀàËÆÓÚandroidÖĞµÄlayout_weight,ÉèÖÃÎª1¼´×Ô¶¯À­ÉìÌî³ä
+        borderRadius: 5,  // ÉèÖÃÔ²½Ç±ß
         backgroundColor: 'white',
         alignItems: 'center',
         marginLeft: 8,
