@@ -3,6 +3,7 @@ var React = require('react-native');
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
 var AwesomeButton = require('react-native-awesome-button')
+var Actions=require('react-native-router-flux').Actions;
 
 var {
     AppRegistry,
@@ -12,13 +13,16 @@ var {
     TextInput,
     Image,
     Alert,
-    ToastAndroid
+    ToastAndroid,
+    TouchableHighlight
     } = React;
 
 var LOGO = require('../images/Login/logo.png');
 var BG = require('../images/Login/bg.jpg');
 var USERNAME = require('../images/Login/username.png');
 var PASSWORD = require('../images/Login/password.png');
+
+import IndexPage from '../home/IndexPage'
 
 var Login1 = React.createClass({
     getInitialState: function () {
@@ -41,6 +45,7 @@ var Login1 = React.createClass({
             .then((response) => response.text())
             .then((responseText) => {
                 ToastAndroid.show(responseText, ToastAndroid.SHORT);
+                this.props.navigator.push({name: 'feed'});
             })
             .catch((error) => {
 
@@ -59,7 +64,7 @@ var Login1 = React.createClass({
                         <TextInput
                             style={[styles.input, styles.whiteFont]}
                             placeholder="用户名/手机号/邮箱"
-                            placeholderTextColor="#FFF"
+                            placeholderTextColor="#E3E3E3"
                             onChangeText={(val) => this.setState({username:val})}
                             value={this.state.username}
                             />
@@ -70,7 +75,7 @@ var Login1 = React.createClass({
                             password={true}
                             style={[styles.input, styles.whiteFont]}
                             placeholder="密码"
-                            placeholderTextColor="#FFF"
+                            placeholderTextColor="#E3E3E3"
                             onChangeText={(val) => this.setState({password:val})}
                             value={this.state.password}
                             />
@@ -88,10 +93,9 @@ var Login1 = React.createClass({
                                          text: '登 录',
                                          onPress: this.btnLogin,
                                          backgroundColor: '#FF3366',
-                                         spinner: true,
                                        },
                                        busy: {
-                                         text: '登录中',
+                                         text: '登 录 中 ……',
                                          backgroundColor: '#7D7D7D',
                                          spinner: true,
                                        },
