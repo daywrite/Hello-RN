@@ -10,8 +10,8 @@ var {
     StyleSheet
     } = React;
 
-import Index from './home/IndexPage'
-//import Index from './default/Example'
+//import Index from './home/IndexPage'
+import Index from './default/Index'
 
 import Login from './Account/login'
 

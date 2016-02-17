@@ -44,7 +44,7 @@ var Login1 = React.createClass({
         fetch('http://221.208.194.214:1280/api/values')
             .then((response) => response.text())
             .then((responseText) => {
-                ToastAndroid.show(responseText, ToastAndroid.SHORT);
+                //ToastAndroid.show(responseText, ToastAndroid.SHORT);
                 this.props.navigator.push({name: 'feed'});
             })
             .catch((error) => {
